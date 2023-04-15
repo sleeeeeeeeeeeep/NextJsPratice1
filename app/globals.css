@@ -5,3 +5,22 @@
 .sub-title {
   text-align: center;
 }
+
+.food {
+  margin: 20px auto;
+  width: 200px;
+  background: wheat;
+  color: black;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.navbar {
+  background: white;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+} 

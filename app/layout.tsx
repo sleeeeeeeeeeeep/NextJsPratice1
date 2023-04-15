@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 
 export const metadata = {
@@ -5,14 +6,17 @@ export const metadata = {
   description: 'NextJS Practice',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
+    
     <html lang="en">
-      <body>{children}</body>
+      <body>
+      <div className='navbar'>
+        <Link href='/'>홈</Link>
+        <Link href='/list'>목록</Link>
+      </div>
+        {children}
+      </body>
     </html>
   )
 }
