@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.food {
+.goods {
   margin: 20px auto;
   width: 200px;
   background: wheat;
@@ -20,7 +20,21 @@
   background: white;
   padding: 20px;
 }
+
 .navbar a {
   margin-right: 10px;
   text-decoration: none;
+} 
+
+.goods-img {
+  width: 100%;
+  height: auto;
+}
+
+.cart-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid grey;
+  line-height: 0px;
 } 
