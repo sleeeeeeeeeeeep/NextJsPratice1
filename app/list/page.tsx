@@ -1,14 +1,18 @@
+'use client'
+
 import Image, { StaticImageData } from "next/image"
-import ImgEggtart from '/public/에그타르트.jpg'
-import ImgTiramisu from '/public/티라미수.jpg'
-import ImgCheeseCake from '/public/치즈케이크.jpg'
 import Link from "next/link"
+import ImgEggtart from '/public/에그타르트.jpg'
+import ImgCheeseCake from '/public/치즈케이크.jpg'
+import ImgTiramisu from '/public/티라미수.jpg'
+import { useState } from "react"
 
 export default function List() {
   const subListLink: string = '/list/subList'
-  
+
   let imgPath: StaticImageData[] = [ImgEggtart, ImgTiramisu, ImgCheeseCake]
   let goods: string[] = ['에그타르트', '티라미수', '치즈케이크']
+  let [count, setCount] = useState([0, 0, 0])
 
   return (
     <div>
@@ -17,11 +21,13 @@ export default function List() {
       </div>
 
       {
-        goods.map((good, index) => {
+        goods.map((good, i) => {
           return (
-            <div className="goods" key={index}>
-              <Image src={imgPath[index]} className="goods-img" alt="이미지"/>
+            <div className="goods" key={i}>
+              <Image src={imgPath[i]} className="goods-img" alt="이미지" />
               <h4 >{good}</h4>
+              <span> {count[i]} </span>
+              <button onClick={() => clickButton(i)}> +</button>
             </div>
           )
         })
@@ -30,4 +36,10 @@ export default function List() {
       <Link href={subListLink}>링크</Link>
     </div>
   )
+
+  function clickButton(index: number) {
+    let tempCount: number[] = [...count]
+    tempCount[index]++
+    setCount(tempCount)
+  }
 }
